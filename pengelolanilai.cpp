@@ -119,7 +119,46 @@ void updateNilaiMahasiswa(string namaSiswa[], string mataPelajaran[], float nila
         cout << "Data pada nomor yang anda masukkan tidak ada.";
         }
 }
-
+ 
 int main(){
-  
+  string namaSiswa[batas];
+  string mataPelajaran[batas];
+  float nilaiSiswa[batas];
+  int jumlahSiswa = 0;
+  int pilihan;
+
+  do {
+      tampilkanMenu();
+      cout<<"Pilih menu : ";
+      cin>>pilihan;
+      cout<<endl;
+
+      switch (pilihan) {
+          case 1 :
+          tambahNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiwa, jumlahSiswa);
+          break;
+
+          case 2 :
+          tampilkanDaftarNilai(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
+          break;
+
+          case 3 :
+          hapusNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
+          break;
+
+          case 4 :
+          updateNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
+          break;
+
+          case 5 : 
+          cout<<"Anda telah keluar dari program"<<endl<<"Terima Kasih telah menggunakan program kami >_<"<<endl;
+          break;
+
+          default :
+          cout<<"Pilihan tidak valid. Coba lagi."<<endl;
+      }
+  }while(pilihan ! + 5)
+
+      return 0;
 }
+
