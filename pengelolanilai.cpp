@@ -5,12 +5,28 @@ using namespace std;
 
 const int batas = 100;
 
-void tampilkanDaftarNilai(){
+void tampilkanDaftarNilai(const string namaSiswa[], const string mataPelajaran[], const float nilaiSiswa[], int jumlah) {
+    if (jumlah == 0) {
+        cout << "Tidak ada nilai siswa dalam daftar" << endl;
+        return;
+    }
 
+    cout << "Daftar Nilai Siswa : " << endl;
+    for (int i = 0; i < jumlah; i++) {
+        cout << i + 1 << ". Nama: " << namaSiswa[i];
+        cout << ", Mata Pelajaran: " << mataPelajaran[i];
+        cout << ", Nilai: " << nilaiSiswa[i] << endl;
+    }
 }
 
-void tampilanMenu(){
-
+void tampilkanMenu() {
+    cout << endl << "===== Menu Pengelolaan Nilai Siswa =====" << endl;
+    cout << "1. Tambah Nilai Siswa" << endl;
+    cout << "2. Tampilkan Daftar Nilai Siswa" << endl;
+    cout << "3. Hapus Nilai Siswa" << endl;
+    cout << "4. Update Nilai Siswa" << endl;
+    cout << "5. Keluar" << endl;
+    cout << "========================================" << endl;
 }
 
 void tambahNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSiswa[], int& jumlah){
