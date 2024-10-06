@@ -11,12 +11,13 @@ void tampilkanDaftarNilai(const string namaSiswa[], const string mataPelajaran[]
         return;
     }
 
-    cout << "Daftar Nilai Siswa : " << endl;
+    cout << "Daftar Nilai Siswa : " << endl << endl;
     for (int i = 0; i < jumlah; i++) {
         cout << i + 1 << ". Nama: " << namaSiswa[i];
         cout << ", Mata Pelajaran: " << mataPelajaran[i];
         cout << ", Nilai: " << nilaiSiswa[i] << endl;
     }
+    cout << endl;
 }
 
 void tampilkanMenu() {
@@ -75,7 +76,7 @@ void hapusNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSisw
     }
 }
 
-void updateNilaiMahasiswa(string namaSiswa[], string mataPelajaran[], float nilaiSiswa[], int jumlah){
+void updateNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSiswa[], int jumlah){
     if(jumlah == 0){
         cout << "Tidak ada data nilai siswa untuk diupdate" << endl;
         return;
@@ -135,7 +136,7 @@ int main(){
 
       switch (pilihan) {
           case 1 :
-          tambahNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiwa, jumlahSiswa);
+          tambahNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
           break;
 
           case 2 :
@@ -151,14 +152,14 @@ int main(){
           break;
 
           case 5 : 
-          cout<<"Anda telah keluar dari program"<<endl<<"Terima Kasih telah menggunakan program kami >_<"<<endl;
-          break;
+          cout<<"Anda telah keluar dari program"<<endl;
+          cout <<"Terima Kasih telah menggunakan program kami >_<"<<endl;
+            break;
 
           default :
           cout<<"Pilihan tidak valid. Coba lagi."<<endl;
       }
-  }while(pilihan ! + 5)
+  }while(pilihan != 5);
 
       return 0;
 }
-
