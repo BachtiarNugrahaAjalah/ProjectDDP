@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const int max = 100;
+const int batas = 100;
 
 void tampilkanDaftarNilai(){
 
@@ -14,7 +14,7 @@ void tampilanMenu(){
 }
 
 void tambahNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSiswa[], int& jumlah){
-    if(jumlah >= max){
+    if(jumlah >= batas){
         cout << "Daftar siswa sudah penuh" << endl;
         cout << "Sistem tidak dapat menerima data nilai siswa lagi" << endl;
         cout << "Maaf atas ketidakmampuan kami";
@@ -35,7 +35,7 @@ void tambahNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSis
 void hapusNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSiswa[], int& jumlah){
     if (jumlah == 0){
         cout << "Tidak ada data nilai siswa untuk dihapus" << endl;
-        break;
+        return;
     }
 
     int opsi;
@@ -62,7 +62,7 @@ void hapusNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSisw
 void updateNilaiMahasiswa(string namaSiswa[], string mataPelajaran[], float nilaiSiswa[], int jumlah){
     if(jumlah == 0){
         cout << "Tidak ada data nilai siswa untuk diupdate" << endl;
-        break;
+        return;
     }
 
     int opsi;
