@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 const int batas = 100;
@@ -61,7 +60,7 @@ void hapusNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSisw
     cin >> opsi;
 
     if(opsi > 0 && opsi <= jumlah){
-        for (int i = opsi - 1; i < jumlah - 1; i--){
+        for (int i = opsi - 1 ; i <= jumlah - 1; i++){
             namaSiswa[i] = namaSiswa[i + 1];
             mataPelajaran[i] = mataPelajaran[i + 1];
             nilaiSiswa[i] = nilaiSiswa[i + 1];
@@ -110,6 +109,7 @@ void updateNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSis
             cin >> nilainew;
             nilaiSiswa[opsi - 1] = nilainew;
         }
+        
         cin.ignore();
 
         cout << "Data nilai siswa telah berhasil diperbarui!" << endl;
@@ -120,46 +120,41 @@ void updateNilaiSiswa(string namaSiswa[], string mataPelajaran[], float nilaiSis
         cout << "Data pada nomor yang anda masukkan tidak ada.";
         }
 }
- 
-int main(){
-  string namaSiswa[batas];
-  string mataPelajaran[batas];
-  float nilaiSiswa[batas];
-  int jumlahSiswa = 0;
-  int pilihan;
 
-  do {
-      tampilkanMenu();
-      cout<<"Pilih menu : ";
-      cin>>pilihan;
-      cout<<endl;
+int main() {
+    string namaSiswa[batas];     
+    string mataPelajaran[batas];  
+    float nilaiSiswa[batas];      
+    int jumlahSiswa = 0;              
+    int pilihan;
 
-      switch (pilihan) {
-          case 1 :
-          tambahNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
-          break;
+    do {
+        tampilkanMenu();
+        cout << "Pilih menu : ";
+        cin >> pilihan;
+        cout << endl;
 
-          case 2 :
-          tampilkanDaftarNilai(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
-          break;
+        switch (pilihan) {
+            case 1:
+                tambahNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
+                break;
+            case 2:
+                tampilkanDaftarNilai(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
+                break;
+            case 3:
+                hapusNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
+                break;
+            case 4:
+                updateNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
+                break;
+            case 5:
+                cout << "Anda telah keluar dari program" << endl;
+                cout << "Terima Kasih telah menggunakan program kami >_<" << endl;
+                break;
+            default:
+                cout << "Pilihan tidak valid. Coba lagi." << endl;
+        }
+    }while(pilihan != 5);
 
-          case 3 :
-          hapusNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
-          break;
-
-          case 4 :
-          updateNilaiSiswa(namaSiswa, mataPelajaran, nilaiSiswa, jumlahSiswa);
-          break;
-
-          case 5 : 
-          cout<<"Anda telah keluar dari program"<<endl;
-          cout <<"Terima Kasih telah menggunakan program kami >_<"<<endl;
-            break;
-
-          default :
-          cout<<"Pilihan tidak valid. Coba lagi."<<endl;
-      }
-  }while(pilihan != 5);
-
-      return 0;
+    return 0;
 }
